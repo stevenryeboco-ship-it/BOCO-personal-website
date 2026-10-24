@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Portfolio - 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Pirata+One&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+<style>
+:root{--maroon:#4b0f1a;--maroon2:#7a1e2f;--gold:#c9a86a;--gold2:#f9eac0;--bg:#f7f1e8;--card:#fffdf7}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial;background:var(--bg);color:#2b1a1a}
+nav{background:var(--maroon);padding:14px;text-align:center;position:sticky;top:0;z-index:99;border-bottom:3px solid var(--gold)}
+nav a{color:var(--gold2);margin:0 8px;text-decoration:none;font-weight:bold;font-size:12px;font-family:'Cinzel',serif}
+.hero{background:linear-gradient(135deg,var(--maroon),var(--maroon2));color:var(--gold2);text-align:center;padding:50px 20px;border-bottom:4px solid var(--gold)}
+.hero img{width:130px;height:130px;border-radius:50%;border:4px solid var(--gold);object-fit:cover;background:white}
+.hero h1{margin:15px 0 5px;font-size:42px;font-family:'UnifrakturCook',cursive;letter-spacing:2px;color:#fff5d6;text-shadow:2px 2px 0 var(--maroon),0 0 10px rgba(201,168,106,.5)}
+#typed{font-size:18px;color:var(--gold);font-style:italic;min-height:24px;display:inline-block;font-family:'Cinzel',serif}
+.cursor{display:inline-block;width:2px;height:18px;background:var(--gold);animation:blink 1s infinite;vertical-align:middle}
+@keyframes blink{50%{opacity:0}}
+.section{max-width:900px;margin:18px auto;background:var(--card);border:1px solid #ecdab3;border-radius:14px;padding:22px;box-shadow:0 6px 18px rgba(0,0,0,.08);scroll-margin-top:90px}
+.section h2{color:var(--maroon);border-left:6px solid var(--gold);padding-left:10px;display:inline-block;font-family:'Pirata One',cursive;font-size:32px;letter-spacing:1px}
+.btn{background:var(--maroon);color:var(--gold2);border:2px solid var(--gold);padding:8px 16px;border-radius:20px;font-weight:bold;cursor:pointer;margin:5px 0 5px 8px;font-size:12px;font-family:'Cinzel',serif}
+.btn.active{background:var(--gold);color:var(--maroon)}
+.content{display:none;margin-top:18px;animation:fade .3s}
+.content.show{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.card{border:2px solid #e8d3a8;background:#fff8e6;padding:16px;border-radius:12px;text-align:center}
+.card h3{color:var(--maroon2);font-family:'Cinzel',serif}
+.testi{background:#fdf6e6;border-left:4px solid var(--gold);padding:12px;margin:10px 0;border-radius:6px;font-style:italic}
+.gallery img{width:100%;height:180px;object-fit:cover;border-radius:10px;border:2px solid #ecdab3}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:100}
+#lightbox.show{display:flex}
+#lightbox img{max-width:90vw;max-height:85vh;border:3px solid var(--gold);border-radius:10px}
+footer{text-align:center;padding:18px;background:var(--maroon);color:var(--gold);margin-top:30px;border-top:3px solid var(--gold);font-family:'Cinzel',serif}
+.bar{height:10px;background:#f0ddb2;border-radius:10px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--maroon2),var(--gold));transition:1s}
+#acro .letter{font-family:'Cinzel',serif;color:var(--maroon);background:linear-gradient(90deg,var(--gold2),#fff8e6);padding:10px 14px;border-radius:8px;border-left:6px solid var(--gold);margin:18px 0 10px;font-size:18px}
+#acro hr{border:none;border-top:2px dashed var(--card);margin-bottom:12px}
+#acro .word{background:#fdf6e6;border:1px solid #e8d3a8;padding:10px 14px;border-radius:8px;margin:8px 0;font-size:13px;transition:.2s}
+#acro .word:hover{transform:translateX(5px);border-color:var(--gold);box-shadow:0 2px 6px rgba(0,0,0,.08)}
+#acro .word b{color:var(--maroon2);font-family:'Cinzel',serif;font-size:13px}
+@media(max-width:600px){
+ .hero h1{font-size:32px}
+ .section{margin:12px;padding:16px}
+ nav a{display:inline-block;margin:5px;font-size:10px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#about">ABOUT</a>
+<a href="#achievements">ACHIEVEMENTS</a>
+<a href="#Testimonials">TESTIMONIALS</a>
+<a href="#blogSection">BLOG</a>
+<a href="#photos">PHOTOS</a>
+<a href="#projects">PROJECTS</a>
+</nav>
+
+<div class="hero">
+<img src="Prof.jpeg" alt="Profile photo" onerror="this.onerror=null;this.src='https://via.placeholder.com/150'">
+<h1>Boco Steven Rye F.</h1>
+<div><span id="typed"></span><span class="cursor"></span></div>
+<p style="margin-top:8px;opacity:.9;font-family:'Cinzel',serif">A programmer with anger issues, But once calm no challenge is too hard.</p>
+</div>
+
+<div class="section" id="about">
+<h2>About Me</h2><button class="btn" onclick="toggle('aboutBox',this)">Show ▼</button>
+<div id="aboutBox" class="content">
+<p><b>Background:</b> "An 16 year old boy who's currently learning different programming languages as a senior high school student."</p><br>
+<b>Progress:</b>
+<div class="bar"><i data-w="30%"></i></div><small>HTML 30%</small>
+<div class="bar" style="margin-top:10px"><i data-w="60%"></i></div><small>C++ 60%</small>
+<div class="bar" style="margin-top:10px"><i data-w="10%"></i></div><small>JavaScript 10%</small>
+</div>
+</div>
+
+<div class="section" id="achievements">
+<h2>Achievements</h2><button class="btn" onclick="toggle('achC',this)">Show ▼</button>
+<div id="achC" class="content">
+<div class="grid">
+<div class="card"><h3>Graduating Junior High School</h3><p>Antipol National Highschool</p></div>
+<div class="card"><h3>Graduated with honors</h3><p>Total grade AVG of 92</p></div>
+<div class="card"><h3>Currently with honors in Senior High School</h3><p>Gateways Institute of Science and Technology</p></div>
+</div>
+</div>
+</div>
+
+<div class="section" id="Testimonials">
+<h2>Testimonials</h2><button class="btn" onclick="toggle('testC',this)">Show ▼</button>
+<div id="testC" class="content">
+<div class="testi">"A very curious student, always enthusiastic to learn." <b>- Szecaihna,Anoñuevo</b></div>
+<div class="testi">"An very intelligent student, you can see how he works hard on his studies and for his dreams" <b>- Maribeth,Suarez</b></div>
+  <div class="testi">"Very noisy but his smarts is obvious and you can see his participation in lectures"<b>- Rechille,Mangampo</b></div>
+</div>
+</div>
+
+<div class="section" id="photos">
+<h2>My Photos</h2><button class="btn" onclick="toggle('galC',this)">Show ▼</button>
+<div id="galC" class="content">
+<div class="grid gallery">
+<img src="me.jpeg" alt="My photo" onclick="openBox(this.src)" onerror="this.onerror=null;this.src='https://via.placeholder.com/150'">
+<img src="photo2.jpeg" alt="Photo 2" onclick="openBox(this.src)" onerror="this.onerror=null;this.src='https://via.placeholder.com/300?text=2'">
+</div>
+</div>
+</div>
+
+<div id="lightbox" onclick="closeBox()">
+<img id="bigImg" alt="Enlarged photo">
+</div>
+
+  
+<div class="section" id="blogSection">
+<h2>My Blog</h2>
+<button class="btn" onclick="toggle('blogContent',this)">Show ▼</button>
+
+<div id="blogContent" class="content">
+
+<div class="card" style="margin-bottom:12px;text-align:left">
+<h3>Day 1 — Monday, October 19, 2026</h3>
+<small>October 19, 2026</small>
+<p style="white-space:pre-wrap;margin-top:10px">Today,I started working on my personal website by asking a.i. to give me an fully optimizable template for my website.</p>
+</div>
+
+<div class="card" style="margin-bottom:12px;text-align:left">
+<h3>Day 2 — Tuesday, October 20, 2026</h3>
+<small>October 20, 2026</small>
+<p style="white-space:pre-wrap;margin-top:10px">Today, I started studying and searching how would i be able to add my favorite color combination matte gold and maroon and also my favorite font-family the gothic.</p>
+</div>
+
+<div class="card" style="margin-bottom:12px;text-align:left">
+<h3>Day 3 — Wednesday, October 21, 2026</h3>
+<small>October 21, 2026</small>
+<p style="white-space:pre-wrap;margin-top:10px">Today, Started roughly Im having troubles on moving files back and forth for my images.</p>
+</div>
+
+<div class="card" style="margin-bottom:12px;text-align:left">
+<h3>Day 4 — Thursday, October 22, 2026</h3>
+<small>October 22, 2026</small>
+<p>Today, I finally able to put everything now i started asking subject teachers for their testimonial on me</p>
+</div>
+<div class="card" style="margin-bottom:12px;text-align:left">
+<h3>Day 5 — Friday, October 23, 2026</h3>
+<small>October 23, 2026</small>
+<p style="white-space:pre-wrap;margin-top:10px">Today, I did it! i finished and finalized everything though it doesnt look pretty and i expect lots and lots of bugs im still so proud of what i did and for my first website.</p>
+</div>
+
+</div>
+</div>
+
+
+<div class="section" id="projects">
+<h2>Recent Work - C++</h2>
+<button class="btn active" onclick="toggle('cpp',this)">Hide ▲</button>
+<div id="cpp" class="content">
+<p style="font-size:13px;margin-bottom:10px;color:var(--maroon2)"><b>COMPROG TRANSPORTATION</b> — Fare calculator with student discount, validation, and receipt.</p>
+
+<pre style="background:#1e1e1e;color:#dcdcaa;padding:16px;border-radius:12px;overflow-x:auto;font-size:11px;line-height:1.5;border-left:6px solid var(--gold);border-top:2px solid var(--maroon2);text-align:left;white-space:pre-wrap"><code>#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;string&gt;
+#include &lt;cctype&gt;
+#include &lt;cstdlib&gt;
+using namespace std;
+
+bool isNumber(string s) {
+    if(s.empty()) return false;
+    for(int i=0; i&lt;s.length(); i++) {
+        if(!isdigit(s[i])) return false;
+    }
+    return true;
+}
+
+int main() {
+    string destName[] = {"", "COGEO", "PADILLA", "BLUE MOUNTAIN", "CORAZON", "PANDAYAN", "RC", "PAGRAI", "FRANCIA"};
+    double fareList[] = {0, 15,15,15,15,20,20,20,20};
+    int dest; char stud, proceed;
+    cout &lt;&lt; fixed &lt;&lt; setprecision(2);
+
+    while(true) {
+        cout &lt;&lt; "\n\tCOMPROG TRANSPORTATION" &lt;&lt; endl;
+        cout &lt;&lt; "DESTINATION:" &lt;&lt; endl;
+        cout &lt;&lt; " FARE 15.00 \t FARE 20.00" &lt;&lt; endl;
+        cout &lt;&lt; " 1 - COGEO \t\t 5 - PANDAYAN" &lt;&lt; endl;
+        cout &lt;&lt; " 2 - PADILLA \t\t 6 - RC" &lt;&lt; endl;
+        cout &lt;&lt; " 3 - BLUE MOUNTAIN \t 7 - PAGRAI" &lt;&lt; endl;
+        cout &lt;&lt; " 4 - CORAZON \t\t 8 - FRANCIA" &lt;&lt; endl;
+        cout &lt;&lt; " 9 - EXIT" &lt;&lt; endl;
+
+        while(true) {
+            cout &lt;&lt; "\nENTER YOUR DESTINATION : ";
+            string d; cin &gt;&gt; d;
+            if(!isNumber(d)) { cout &lt;&lt; "INVALID! 1-9 ONLY!\n"; continue; }
+            dest = atoi(d.c_str());
+            if(dest == 9) { cout &lt;&lt; "PROGRAM CLOSED. THANK YOU!"; return 0; }
+            if(dest &lt; 1 || dest &gt; 8) { cout &lt;&lt; "INVALID! 1-8 ONLY!\n"; continue; }
+            break;
+        }
+
+        cout &lt;&lt; "STUDENT (Y/N)? : "; cin &gt;&gt; stud;
+        double fare = *(fareList + dest);
+        double discount = (stud=='Y' || stud=='y')? fare * 0.20 : 0.00;
+        double total = fare - discount;
+
+        double amount = 0; string amountStr;
+        while(true) {
+            cout &lt;&lt; "ENTER AMOUNT PAID : "; cin &gt;&gt; amountStr;
+            if(!isNumber(amountStr)) { cout &lt;&lt; "NUMBERS ONLY!\n"; continue; }
+            amount = atof(amountStr.c_str());
+            if(amount &lt; total) { cout &lt;&lt; "KULANG! Total is " &lt;&lt; total &lt;&lt; endl; continue; }
+            break;
+        }
+
+        double change = amount - total;
+        cout &lt;&lt; "\n----------------------------------------" &lt;&lt; endl;
+        cout &lt;&lt; left &lt;&lt; setw(20) &lt;&lt; "DESTINATION :" &lt;&lt; *(destName + dest) &lt;&lt; endl;
+        cout &lt;&lt; left &lt;&lt; setw(20) &lt;&lt; "FARE :" &lt;&lt; fare &lt;&lt; endl;
+        cout &lt;&lt; left &lt;&lt; setw(20) &lt;&lt; "DISCOUNT (20%) :" &lt;&lt; discount &lt;&lt; endl;
+        cout &lt;&lt; left &lt;&lt; setw(20) &lt;&lt; "TOTAL FARE :" &lt;&lt; total &lt;&lt; endl;
+        cout &lt;&lt; left &lt;&lt; setw(20) &lt;&lt; "AMOUNT PAID :" &lt;&lt; amount &lt;&lt; endl;
+        cout &lt;&lt; left &lt;&lt; setw(20) &lt;&lt; "CHANGE :" &lt;&lt; change &lt;&lt; endl;
+        cout &lt;&lt; "----------------------------------------" &lt;&lt; endl;
+        cout &lt;&lt; "CODED BY: Steven Rye F. Boco" &lt;&lt; endl;
+
+        cout &lt;&lt; "\nDO YOU WANT TO PROCEED ANOTHER (Y/N)? : "; cin &gt;&gt; proceed;
+        if(proceed == 'Y' || proceed == 'y') { system("cls"); continue; }
+        else { cout &lt;&lt; "PROGRAM CLOSED. THANK YOU!"; break; }
+    }
+    return 0;
+}</code></pre>
+
+<div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+<span style="background:var(--maroon);color:var(--gold2);padding:5px 12px;border-radius:15px;font-size:11px;border:1px solid var(--gold)">C++</span>
+<span style="background:#fdf6e6;color:var(--maroon);padding:5px 12px;border-radius:15px;font-size:11px;border:1px solid var(--card)">Pointers *(fareList+dest)</span>
+<span style="background:#fdf6e6;color:var(--maroon);padding:5px 12px;border-radius:15px;font-size:11px;border:1px solid var(--card)">Input Validation</span>
+<span style="background:#fdf6e6;color:var(--maroon);padding:5px 12px;border-radius:15px;font-size:11px;border:1px solid var(--card)">iomanip</span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Recent Work - HTML / Acronym Dictionary</h2>
+<button class="btn active" onclick="toggle('acro',this)">Hide ▲</button>
+<button class="btn" onclick="toggle('acroCode',this)" style="background:var(--gold);color:var(--maroon)">Show Code</button>
+
+<div id="acro" class="content"> 
+<p style="font-size:12px;opacity:.7;margin-bottom:12px">A-Z Acronym Dictionary — HTML project with 100+ terms from OS to ZIF</p>
+
+<div class="word"><b>OS</b> – Operating System – computer system software</div>
+<div class="word"><b>OP</b> – Original Poster – first content creator</div>
+
+<h2 class="letter">Letter P</h2><hr>
+<div class="word"><b>PDF</b> – Portable Document Format – document file type</div>
+<div class="word"><b>PIN</b> – Personal Identification Number – security number</div>
+<div class="word"><b>POV</b> – Point Of View – perspective</div>
+<div class="word"><b>PS</b> – Postscript – additional note</div>
+<div class="word"><b>PC</b> – Personal Computer – individual computer</div>
+
+<h2 class="letter">Letter Q</h2><hr>
+<div class="word"><b>QA</b> – Quality Assurance – quality checking</div>
+<div class="word"><b>Q&A</b> – Questions And Answers – discussion format</div>
+<div class="word"><b>QR</b> – Quick Response – scannable code</div>
+<div class="word"><b>Qty.</b> – Quantity – amount or number</div>
+<div class="word"><b>QTR</b> – Quarter – one-fourth period</div>
+
+<h2 class="letter">Letter R</h2><hr>
+<div class="word"><b>RAM</b> – Random Access Memory – temporary computer memory</div>
+<div class="word"><b>RIP</b> – Rest In Peace – respectful farewell</div>
+<div class="word"><b>RSVP</b> – Répondez S'il Vous Plaît – request for response</div>
+<div class="word"><b>ROM</b> – Read Only Memory – permanent computer memory</div>
+<div class="word"><b>R&D</b> – Research And Development – innovation process</div>
+
+<h2 class="letter">Letter S</h2><hr>
+<div class="word"><b>SMS</b> – Short Message Service – text messaging</div>
+<div class="word"><b>STEM</b> – Science Technology Engineering Mathematics – academic fields</div>
+<div class="word"><b>SEO</b> – Search Engine Optimization – website visibility</div>
+<div class="word"><b>SS</b> – Screenshot – captured screen image</div>
+<div class="word"><b>SIM</b> – Subscriber Identity Module – mobile identification</div>
+
+<h2 class="letter">Letter T</h2><hr>
+<div class="word"><b>TB</b> – Terabyte – digital storage unit</div>
+<div class="word"><b>TL;DR</b> – Too Long; Didn't Read – short summary</div>
+<div class="word"><b>TBA</b> – To Be Announced – information coming later</div>
+<div class="word"><b>TBD</b> – To Be Determined – decision pending</div>
+<div class="word"><b>TTYL</b> – Talk To You Later – goodbye message</div>
+
+<h2 class="letter">Letter U</h2><hr>
+<div class="word"><b>URL</b> – Uniform Resource Locator – web address</div>
+<div class="word"><b>USB</b> – Universal Serial Bus – connection standard</div>
+<div class="word"><b>UFO</b> – Unidentified Flying Object – unidentified object</div>
+<div class="word"><b>UN</b> – United Nations – international organization</div>
+<div class="word"><b>USA</b> – United States of America – country name</div>
+
+<h2 class="letter">Letter V</h2><hr>
+<div class="word"><b>VIP</b> – Very Important Person – special guest</div>
+<div class="word"><b>VPN</b> – Virtual Private Network – secure connection</div>
+<div class="word"><b>VFX</b> – Visual Effects – digital effects</div>
+<div class="word"><b>VHS</b> – Video Home System – video format</div>
+<div class="word"><b>Vlog</b> – Video Blog – video-based blog</div>
+
+<h2 class="letter">Letter W</h2><hr>
+<div class="word"><b>WWW</b> – World Wide Web – web system</div>
+<div class="word"><b>Wi-Fi</b> – Wireless Fidelity – wireless networking</div>
+<div class="word"><b>WIP</b> – Work In Progress – unfinished work</div>
+<div class="word"><b>WDYM</b> – What Do You Mean – asking for clarification</div>
+<div class="word"><b>WYD</b> – What You Doing – casual question</div>
+
+<h2 class="letter">Letter X</h2><hr>
+<div class="word"><b>XML</b> – Extensible Markup Language – data markup language</div>
+<div class="word"><b>XOXO</b> – Hugs And Kisses – affectionate closing</div>
+<div class="word"><b>XP</b> – Experience Points – game progression points</div>
+<div class="word"><b>XL</b> – Extra Large – clothing size</div>
+<div class="word"><b>XLS</b> – Excel Spreadsheet – spreadsheet file</div>
+
+<h2 class="letter">Letter Y</h2><hr>
+<div class="word"><b>YOLO</b> – You Only Live Once – life expression</div>
+<div class="word"><b>YTD</b> – Year To Date – current yearly period</div>
+<div class="word"><b>YKW</b> – You Know What – conversational expression</div>
+<div class="word"><b>YTB</b> – YouTube – video platform</div>
+<div class="word"><b>YW</b> – You're Welcome – polite response</div>
+
+<h2 class="letter">Letter Z</h2><hr>
+<div class="word"><b>ZIP</b> – Zone Improvement Plan – postal code system</div>
+<div class="word"><b>Zzz</b> – Sleeping Sound – expression of sleep</div>
+<div class="word"><b>ZL</b> – Zoom Level – viewing scale</div>
+<div class="word"><b>ZB</b> – Zettabyte – large storage unit</div>
+<div class="word"><b>ZIF</b> – Zero Insertion Force – connector type</div>
+</div>
+
+<div id="acroCode" class="content" style="margin-top:12px">
+<pre style="background:#1e1e1e;color:#d4d4d4;padding:14px;border-radius:10px;overflow-x:auto;font-size:11px;white-space:pre-wrap;border-left:5px solid var(--gold)"><code>&lt;div class="word"&gt;&lt;b&gt;OS&lt;/b&gt; – Operating System – computer system software&lt;/div&gt;
+&lt;h2 class="letter"&gt;Letter P&lt;/h2&gt;
+&lt;hr&gt;
+&lt;div class="word"&gt;&lt;b&gt;PDF&lt;/b&gt; – Portable Document Format – document file type&lt;/div&gt;
+&lt;div class="word"&gt;&lt;b&gt;PIN&lt;/b&gt; – Personal Identification Number – security number&lt;/div&gt;
+&lt;h2 class="letter"&gt;Letter Q&lt;/h2&gt;
+&lt;hr&gt;
+&lt;div class="word"&gt;&lt;b&gt;QA&lt;/b&gt; – Quality Assurance – quality checking&lt;/div&gt;
+&lt;h2 class="letter"&gt;Letter R&lt;/h2&gt;
+&lt;hr&gt;
+&lt;div class="word"&gt;&lt;b&gt;RAM&lt;/b&gt; – Random Access Memory – temporary computer memory&lt;/div&gt;
+&lt;h2 class="letter"&gt;Letter S&lt;/h2&gt;
+&lt;hr&gt;
+&lt;div class="word"&gt;&lt;b&gt;SMS&lt;/b&gt; – Short Message Service – text messaging&lt;/div&gt;
+&lt;h2 class="letter"&gt;Letter T&lt;/h2&gt;
+&lt;hr&gt;
+&lt;div class="word"&gt;&lt;b&gt;TB&lt;/b&gt; – Terabyte – digital storage unit&lt;/div&gt;
+&lt;h2 class="letter"&gt;Letter U&lt;/h2&gt;
+&lt;hr&gt;
+&lt;div class="word"&gt;&lt;b&gt;URL&lt;/b&gt; – Uniform Resource Locator – web address&lt;/div&gt;
+&lt;h2 class="letter"&gt;Letter V&lt;/h2&gt;
+&lt;hr&gt;
+&lt;div class="word"&gt;&lt;b&gt;VIP&lt;/b&gt; – Very Important Person – special guest&lt;/div&gt;
+&lt;h2 class="letter"&gt;Letter W&lt;/h2&gt;
+&lt;hr&gt;
+&lt;div class="word"&gt;&lt;b&gt;WWW&lt;/b&gt; – World Wide Web – web system&lt;/div&gt;
+&lt;h2 class="letter"&gt;Letter X&lt;/h2&gt;
+&lt;hr&gt;
+&lt;div class="word"&gt;&lt;b&gt;XML&lt;/b&gt; – Extensible Markup Language – data markup language&lt;/div&gt;
+&lt;h2 class="letter"&gt;Letter Y&lt;/h2&gt;
+&lt;hr&gt;
+&lt;div class="word"&gt;&lt;b&gt;YOLO&lt;/b&gt; – You Only Live Once – life expression&lt;/div&gt;
+&lt;h2 class="letter"&gt;Letter Z&lt;/h2&gt;
+&lt;hr&gt;
+&lt;div class="word"&gt;&lt;b&gt;ZIP&lt;/b&gt; – Zone Improvement Plan – postal code system&lt;/div&gt;</code></pre>
+</div>
+</div>
+
+<footer>© 2026 Boco Steven Rye F.</footer>
+
+<script>
+function toggle(id,btn){
+  var b=document.getElementById(id);
+  if(!b)return;
+  var s=b.classList.toggle('show');
+  if(btn){
+    btn.classList.toggle('active',s);
+    btn.textContent=s?'Hide ▲':'Show ▼';
+  }
+  if(s){
+    b.querySelectorAll('.bar i').forEach(function(i){
+      var w=i.getAttribute('data-w')||'90%';
+      setTimeout(function(){i.style.width=w},100);
+    });
+  }
+}
+
+var phrases=["With passion comes Obsession","Veni,Vedi,Vici","Work yourself to death or Be smart enough to work for your living"];
+var p=0,c=0,del=false;
+
+function type(){
+  var el=document.getElementById('typed');
+  if(!el)return;
+  var full=phrases[p];
+  if(!del){
+    el.textContent=full.slice(0,++c);
+    if(c===full.length){del=true;setTimeout(type,1500);return}
+  }else{
+    el.textContent=full.slice(0,--c);
+    if(c===0){del=false;p=(p+1)%phrases.length}
+  }
+  setTimeout(type,del?40:80);
+}
+type();
+
+function openBox(src){
+  document.getElementById('bigImg').src=src;
+  document.getElementById('lightbox').classList.add('show');
+}
+function closeBox(){
+  document.getElementById('lightbox').classList.remove('show');
+}
+
+document.querySelectorAll('nav a').forEach(function(a){
+  a.addEventListener('click',function(){
+    var id=a.getAttribute('href').slice(1);
+    var section=document.getElementById(id);
+    if(section){
+      var content=section.querySelector('.content');
+      if(content)content.classList.add('show');
+      section.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  });
+});
+
+function renderBlogs(){
+  var list=document.getElementById('blogList');
+  if(!list)return;
+  list.innerHTML='';
+  var posts=[];
+  try{posts=JSON.parse(localStorage.getItem('portfolioBlogs')||'[]')}catch(e){posts=[]}
+  posts.forEach(function(post,index){
+    var article=document.createElement('div');
+    article.className='card';
+    article.style.marginBottom='12px';
+    var heading=document.createElement('h3');
+    heading.textContent=post.title;
+    var date=document.createElement('small');
+    date.textContent=post.date;
+    var paragraph=document.createElement('p');
+    paragraph.style.whiteSpace='pre-wrap';
+    paragraph.style.marginTop='10px';
+    paragraph.textContent=post.text;
+    var remove=document.createElement('button');
+    remove.className='btn';
+    remove.textContent='Delete Post';
+    remove.onclick=function(){
+      if(!confirm('Delete this blog post?'))return;
+      posts.splice(index,1);
+      localStorage.setItem('portfolioBlogs',JSON.stringify(posts));
+      renderBlogs();
+    };
+    article.appendChild(heading);
+    article.appendChild(date);
+    article.appendChild(paragraph);
+    article.appendChild(remove);
+    list.appendChild(article);
+  });
+}
+
+function addPost(){
+  var title=document.getElementById('blogTitle').value.trim();
+  var content=document.getElementById('blogText').value.trim();
+  var date=document.getElementById('blogDate').value;
+
+  if(!title||!content||!date){
+    alert('Please complete the blog title, content, and date.');
+    return;
+  }
+
+  var posts=[];
+  try{posts=JSON.parse(localStorage.getItem('portfolioBlogs')||'[]')}catch(e){posts=[]}
+  posts.unshift({title:title,text:content,date:date});
+
+  try{
+    localStorage.setItem('portfolioBlogs',JSON.stringify(posts));
+  }catch(e){
+    alert('Unable to save the post in this browser.');
+    return;
+  }
+
+  document.getElementById('blogTitle').value='';
+  document.getElementById('blogText').value='';
+  document.getElementById('blogDate').value='';
+  document.getElementById('addBlog').style.display='none';
+  document.getElementById('blogContent').classList.add('show');
+  renderBlogs();
+}
+
+renderBlogs();
+</script>
+
+</body>
+</html>
+
